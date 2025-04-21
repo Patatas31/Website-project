@@ -1,0 +1,193 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: url(img/logo\ \(1\).png);
+    background-size: cover; /* Keeps the image covering the entire body */
+    background-position: calc(100% + 300px) center; /* Moves the image 50px further to the right */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: #FFD65A;
+    height: 100vh;
+    width: max(40%, 400px);
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
+}
+
+.container header {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.container form {
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form label {
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: #FF9D23;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+form input {
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1.4em;
+    font: inherit;
+    border: 2px solid #FFD65A;
+    border-radius: 0 10px 10px 0;
+    transition: border 150ms ease;
+}
+
+form input:hover {
+    border-color: black;
+}
+
+form input:focus {
+    outline: none;
+    border-color: black;
+}
+
+div:has(input:focus) > label {
+    background-color: black;
+}
+
+form input::placeholder {
+    color: black;
+    opacity: 1;
+}
+
+form svg {
+    fill: white;
+}
+
+form button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: #FF9D23;
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: black;
+}
+
+form button:focus {
+    outline: none;
+    background: black;
+}
+
+form .link a {
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+form .link a:hover {
+    text-decoration: underline;
+}
+
+form div.incorrect label {
+    background-color: red;
+}
+
+form div.incorrect input {
+    border-color: red;
+}
+
+.btn {
+    padding-top: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #F3C623;
+    font-weight: 400;
+    transition: background-color 0.2s;
+    border-bottom: 8px;
+}
+
+.btn:hover {
+    background-color: brown;
+    color: white;
+    border: 2px solid;
+}
+
+.user-info {
+    margin-left: auto;
+    font-weight: bold;
+    color: white;
+}
+
+/* Media Queries for Mobile Screens */
+@media (max-width: 767px) {
+    body {
+        background: none; /* Remove background image on mobile */
+    }
+
+    .container {
+        width: 100%; /* Full width on mobile */
+        border-radius: 0; /* Remove border radius */
+    }
+
+    .container header {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+    body {
+        background: url(img/logo\ \(1\).png);
+        background-size: cover;
+        background-position: calc(100% + 300px) center;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        width: max(40%, 400px);
+        border-radius: 0 20px 20px 0;
+    }
+
+    .container header {
+        font-size: 3rem; /* Larger font size for desktop */
+    }
+}

@@ -1,0 +1,471 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FCC737;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 80px; /* Adjust based on navbar height */
+}
+
+/* Navbar */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #FCC737;
+    transition: 0.6s;
+    z-index: 100000;
+    transition: top 1s;
+}
+
+.hidden {
+    top: -200px; /* Adjust as necessary to fully hide */
+    background-color: whitesmoke;
+}
+
+header .logo {
+    position: relative;
+    width: 120px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.nav-links {
+    list-style: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+.nav-links li a {
+    position: relative;
+    text-decoration: none;
+    color: #D32F2F;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 0 10px;
+    transition: 0.6s;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+/* Menu Section */
+.menu {
+    padding: 100px 10px 30px 10px; /* Adjusted padding for fixed header */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for responsiveness */
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.heading {
+    padding: 10px;
+    background-color: #3D5300;
+    color: #FFE31A;
+    margin-bottom: 30px;
+    grid-column: 1/-1;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Adds a soft shadow */
+}
+
+.heading > h1 {
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.heading > h3 {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.food-items {
+    background-color: #3D5300;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(225, 214, 90);
+    transition: 0.2s ease-in-out;
+    overflow: hidden; /* Ensures content doesn't overflow */
+}
+
+.food-items img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images fit properly */
+    border-radius: 15px 15px 0 0;
+    cursor: pointer;
+}
+
+.details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Ensures details take up remaining space */
+}
+
+.details-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.details-sub > h5 {
+    font-weight: 600;
+    font-size: 16px;
+    color: #F09319;
+}
+
+.details-sub > h6 {
+    color: #FFE31A;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.details > p {
+    color: #ABBA7C;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.details form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.details form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.details form button {
+    background-color: #F09319;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.4s;
+}
+
+.details form button:hover {
+    background-color: #d87f12;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 768px) {
+    .menu {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust for larger screens */
+    }
+
+    .heading > h1 {
+        font-size: 32px;
+        letter-spacing: 10px;
+    }
+
+    .heading > h3 {
+        font-size: 22px;
+        letter-spacing: 5px;
+    }
+
+    .food-items img {
+        height: 300px; /* Adjust image height for larger screens */
+    }
+
+    .details-sub > h5 {
+        font-size: 18px;
+    }
+
+    .details-sub > h6 {
+        font-size: 16px;
+    }
+
+    .details > p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-links li {
+        padding: 0px 20px;
+    }
+
+    .nav-links li a {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .menu {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust for larger screens */
+    }
+
+    .food-items img {
+        height: 350px; /* Adjust image height for larger screens */
+    }
+}
+
+/* Homepage Section */
+.homepage-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/shawarma-header.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.homepage-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(25, 25, 25, 0.5); /* Adjust the opacity here (0.5 for 50%) */
+    z-index: 1; /* Keep it below other content */
+}
+
+.homepage-section h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #F3C623;
+    font-size: 24px;
+    z-index: 2;
+    text-align: center;
+}
+
+.homepage-section p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    font-size: 14px;
+    z-index: 3;
+    text-align: center;
+}
+
+.homepage-section button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    font-size: 14px;
+    z-index: 3;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: #F3C623;
+    color: black;
+}
+
+/* Initially align text and icon */
+.homepage-section button span {
+    margin-right: 8px; /* Space between text and icon */
+    transition: transform 0.3s ease; /* Smooth animation for text */
+}
+
+.homepage-section button i {
+    transition: transform 0.3s ease; /* Smooth animation for icon */
+}
+
+/* Hover effect when hovering the button */
+.homepage-section button:hover {
+    background-color: #fad03a; /* Button background color change */
+}
+
+.homepage-section button:hover span {
+    transform: translateX(-10px); /* Moves button text to the left */
+}
+
+.homepage-section button:hover i {
+    transform: translateX(10px); /* Moves icon to the right */
+}
+
+/* Footer */
+.footer {
+    background-color: #3D5300;
+    color: wheat;
+    padding: 20px;
+}
+
+.footer .footers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    font-family: 'Poppins';
+    flex-wrap: wrap;
+}
+
+.footer .footers a {
+    color: var(--text-color);
+}
+
+.footer .footers .Follow-me i {
+    object-fit: contain;
+    border-radius: 2px;
+    padding-left: 10px;
+}
+
+/* About Us Section */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 40px 5%;
+    background-color: #fff;
+}
+
+.about-content {
+    max-width: 100%;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #3D5300;
+}
+
+.about-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-section img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+@media (min-width: 768px) {
+    .about-section {
+        flex-direction: row;
+        gap: 100px;
+        padding: 70px 13%;
+    }
+
+    .about-content {
+        max-width: 50%;
+        text-align: left;
+    }
+
+    .about-content h2 {
+        font-size: 32px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+    .about-section img {
+        max-width: 600px;
+    }
+    .submit-reset {
+        text-align: center;
+    }
+    
+}
+
+@media (max-width: 395px) {
+    .homepage-section p{
+        margin-top: 30px;
+    }
+    .homepage-section button{
+        margin-top: 30px;
+    }
+
+    .homepage-section img{
+        min-height: 900px;
+    }
+
+    .homepage-section {
+        background-image: url(img/shawarma-header.jpg);
+        width: 100%; /* Adjust width as needed */
+        height: 800px; /* Adjust height as needed */
+        background-size: cover; /* Ensures the image covers the entire section */
+        background-position: center;
+    }
+    
+    
+}
+
+
+@media (max-width: 475px) {
+    .homepage-section p{
+        margin-top: 30px;
+    }
+    .homepage-section button{
+        margin-top: 30px;
+    }
+
+    .homepage-section img{
+        min-height: 900px;
+    }
+
+    .homepage-section {
+        background-image: url(img/shawarma-header.jpg);
+        width: 100%; /* Adjust width as needed */
+        height: 800px; /* Adjust height as needed */
+        background-size: cover; /* Ensures the image covers the entire section */
+        background-position: center;
+    }
+    
+    
+}
