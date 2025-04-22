@@ -1,6 +1,6 @@
-This project is a full-stack website developed for a food business, designed to streamline customer interaction, food ordering, and business operations. It includes a responsive frontend, a dynamic backend, and a structured database for data management.
+# This project is a full-stack website developed for a food business, designed to streamline customer interaction, food ordering, and business operations. It includes a responsive frontend, a dynamic backend, and a structured database for data management.
 
-User Interface (Frontend):
+## **bold** User Interface (Frontend):
 
   Responsive homepage with featured menu items
 
@@ -12,7 +12,7 @@ User Interface (Frontend):
 
   Real-time cart and checkout functionality
 
-Backend Functionality:
+## **Backend Functionality:**
 
   Handles user authentication and session management
 
@@ -20,7 +20,7 @@ Backend Functionality:
 
   Admin dashboard for managing menu, orders, and customers
 
-Database Integration:
+## **Database Integration:**
 
   Stores customer details, orders, menu items, and feedback
 
